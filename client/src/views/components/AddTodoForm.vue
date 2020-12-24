@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     addTodo() {
-      let param = {
+      const param = {
         title: this.todo.title,
         content: this.todo.content,
       };
