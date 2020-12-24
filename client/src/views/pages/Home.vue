@@ -18,6 +18,7 @@
           :todo="todo"
           @update-completed="updateTodo(todo)"
           @update-todo="updateTodo(todo)"
+          @delete-todo="deleteTodo(todo)"
         />
       </ul>
     </template>
@@ -43,6 +44,9 @@ export default {
   methods: {
     ...mapActions([
       'updateTodo',
+    ]),
+    ...mapActions([
+      'deleteTodo',
     ]),
     ...mapActions({
       getTodoList: 'updateTodoList',
