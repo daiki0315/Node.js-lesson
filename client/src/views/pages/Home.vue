@@ -6,8 +6,8 @@
     </template>
     <template>
       <div class="list-status">
-        <p>総件数: </p>
-        <p>完了済み: </p>
+        <p>総件数: {{ todoList.length }}</p>
+        <p>完了済み: {{ completedtodos.length }}</p>
       </div>
     </template>
     <template>
@@ -55,6 +55,9 @@ export default {
   computed: {
     ...mapGetters([
       'todoList',
+    ]),
+    ...mapGetters([
+      'completedtodos',
     ]),
   },
 };
