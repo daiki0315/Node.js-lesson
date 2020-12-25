@@ -4,6 +4,8 @@ import Login from '@/pages/Login.vue';
 import Home from '@/pages/Home.vue';
 import User from '@/pages/User.vue';
 import UserHome from '@/components/UserHome.vue';
+import UserList from '@/pages/UserList.vue';
+import UserListAll from '@/components/UserList.vue';
 import store from '../store';
 
 Vue.use(VueRouter);
@@ -34,6 +36,17 @@ const routes = [
         path: '',
         name: 'userHome',
         component: UserHome,
+      },
+    ],
+  },
+  {
+    path: '/userList',
+    component: UserList,
+    children: [
+      {
+        path: '',
+        name: 'userListAll',
+        component: UserListAll,
       },
     ],
   },
