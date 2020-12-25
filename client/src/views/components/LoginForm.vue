@@ -19,37 +19,19 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      user: {
-        username: '',
-        password: '',
-      },
-    };
+  props: {
+    user: {
+      type: Object,
+    },
+    loginUser: {
+      type: Object,
+    },
   },
   methods: {
     login() {
-      const param = {
-        username: this.user.username,
-        password: this.user.password,
-      };
-      this.$store.dispatch('updateLoginUser', param);
-    },
-  },
-  computed: {
-    ...mapState([
-      'loginUser',
-      'isAuthenticated',
-    ]),
-  },
-  watch: {
-    isAuthenticated() {
-      if (this.isAuthenticated) {
-        this.$router.push({ name: 'home' });
-      }
+      return this.$emit('login');
     },
   },
 };
